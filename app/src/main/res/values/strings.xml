@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Bil Bakalım</string>
+    <string name="fill"> Lütfen Boş bırakmayınız</string>
+    <string name="error">Hata</string>
+    <string name="quit">Çıkış Yap</string>
+
+    <!-- Onboarding strings -->
+    <string name="skipOnBoard">Atla</string>
+    <string name="nextOnBoard">Devam et</string>
+    <string name="finishOnBoard">Başlayalım</string>
+
+    <!-- LoginFragment strings -->
+    <string name="loginpagewelcomemessage">Bil Bakalım Giriş Ekranı</string>
+    <string name="signIn">Giriş Yap</string>
+    <string name="loginPageSignUpText">Üye değil misin?</string>
+    <string name="forgotPassword"> Şifremi Unuttum </string>
+    <string name="passwordLogin">Şifreniz</string>
+    <string name="email">Email</string>
+
+    <!-- RegisterFragment strings -->
+    <string name="registerPageWelcomeMessage">Bil Bakalım Kayıt Ekranı</string>
+    <string name="emailRegister">Email(**@*.com/tr/net vb.)</string>
+    <string name="passwordRegister">Şifre(En az 6 karakter)</string>
+    <string name="passwordAgain">Şifre Tekrarı</string>
+    <string name="signUp">Kayıt Ol</string>
+    <string name="goBack">Geri Dön</string>
+    <string name="registerSuccess">Kayıt Başarılı. Lütfen giriş yapınız</string>
+    <string name="passNotMatch">Şifreleriniz eşleşmiyor</string>
+
+    <!---    forgotPassword dialog Strings     -->
+    <string name="infoForgotPassword"> E-Mailinizi girip Gönder tuşuna basınız. </string>
+    <string name="closeDialog">Kapat</string>
+    <string name="sendMail">Gönder</string>
+    <string name="checkInbox">Lütfen E-Mailinizi Kontrol Ediniz</string>
+
+    <!-- MainPage strings -->
+    <string name="newGame">Yeni Oyun</string>
+    <string name="settings">Ayarlar</string>
+    <string name="addWord">Kelime Ekle</string>
+
+    <!-- NewWord strings -->
+    <string name="newWordPageTitle">Kelime Ekleme Sayfası</string>
+    <string name="mainWord">Bilinmesi istenen kelimeyi giriniz</string>
+    <string name="penaltyOne">Yasaklanacak kelime 1</string>
+    <string name="penaltyTwo">Yasaklanacak kelime 2</string>
+    <string name="penaltyThree">Yasaklanacak kelime 3</string>
+    <string name="penaltyFour">Yasaklanacak kelime 4</string>
+    <string name="penaltyFive">Yasaklanacak kelime 5</string>
+    <string name="clear">Temizle</string>
+    <string name="checkDatabase">Kontrol Et</string>
+    <string name="wordHave">Bu kelimeden zaten mevcut. Lütfen farklı bir kelime giriniz.</string>
+
+</resources>

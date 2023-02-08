@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "242220474993",
+    "project_id": "bilbakalim-46323",
+    "storage_bucket": "bilbakalim-46323.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242220474993:android:599f870f096425fa47b1d0",
+        "android_client_info": {
+          "package_name": "com.example.bilbakalim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242220474993-6c0ubh0nil4n7d5sg9abennhfssec2b6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bilbakalim",
+            "certificate_hash": "78f860fb6be3a2484c2003669ecef8c5733119a5"
+          }
+        },
+        {
+          "client_id": "242220474993-kjvt0qejf8r93h397036pumr741fctg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm6QgmN4tyJK923MaCh7eN87bfwcqyFbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242220474993-kjvt0qejf8r93h397036pumr741fctg0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

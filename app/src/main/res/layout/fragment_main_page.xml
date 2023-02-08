@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".View.Game.MainPage">
+
+    <TextView
+        android:id="@+id/MainPageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="108dp"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:fontFamily="@font/mtcorsiva"
+        android:textSize="72sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/newGameBtn"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/newGame"
+        app:layout_constraintTop_toBottomOf="@id/MainPageTitle"
+        app:layout_constraintStart_toStartOf="@id/MainPageTitle"
+        app:layout_constraintEnd_toEndOf="@id/MainPageTitle"
+        />
+    <Button
+        android:id="@+id/settingsBtn"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/settings"
+        app:layout_constraintTop_toBottomOf="@id/newGameBtn"
+        app:layout_constraintStart_toStartOf="@id/newGameBtn"
+        app:layout_constraintEnd_toEndOf="@id/newGameBtn"
+        />
+    <Button
+        android:id="@+id/addWordBtn"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/addWord"
+        app:layout_constraintTop_toBottomOf="@id/settingsBtn"
+        app:layout_constraintStart_toStartOf="@id/settingsBtn"
+        app:layout_constraintEnd_toEndOf="@id/settingsBtn"
+        />
+    <Button
+        android:id="@+id/quitGameBtn"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/quit"
+        app:layout_constraintTop_toBottomOf="@id/addWordBtn"
+        app:layout_constraintStart_toStartOf="@id/settingsBtn"
+        app:layout_constraintEnd_toEndOf="@id/settingsBtn"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
