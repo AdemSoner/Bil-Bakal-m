@@ -34,7 +34,8 @@ class MainPage : Fragment() {
 
         }
         binding.settingsBtn.setOnClickListener {
-
+            val action= MainPageDirections.actionMainPageToSettingsFragment()
+            Navigation.findNavController(view).navigate(action)
         }
         binding.addWordBtn.setOnClickListener {
             val action= MainPageDirections.actionMainPageToNewWordFragment()

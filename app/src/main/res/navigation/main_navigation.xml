@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_mainPage_to_newWordFragment"
             app:destination="@id/newWordFragment" />
+        <action
+            android:id="@+id/action_mainPage_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -64,6 +67,14 @@
         android:label="NewWordFragment" >
         <action
             android:id="@+id/action_newWordFragment_to_mainPage"
+            app:destination="@id/mainPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.bilbakalim.View.Game.SettingsFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_mainPage"
             app:destination="@id/mainPage" />
     </fragment>
 

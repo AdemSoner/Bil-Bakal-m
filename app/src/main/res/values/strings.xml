@@ -50,4 +50,21 @@
     <string name="checkDatabase">Kontrol Et</string>
     <string name="wordHave">Bu kelimeden zaten mevcut. Lütfen farklı bir kelime giriniz.</string>
 
+    <!--- Settings strings -->
+    <string name="settingsTitle"> Ayarlar </string>
+    <string name="timeSettings">Süre:</string>
+    <string name="timeOne">30</string>
+    <string name="timeTwo">60</string>
+    <string name="timeThree">90</string>
+    <string name="passSettings">Pas Hakkı</string>
+    <string name="passOne">1</string>
+    <string name="passThree">3</string>
+    <string name="passTwo">2</string>
+    <string name="winPointSettings">Kazanma Puanı</string>
+    <string name="winPointTwo">25</string>
+    <string name="winPointOne">10</string>
+    <string name="winPointThree">40</string>
+    <string name="defaultSettings">Varsayılan ayarlar</string>
+
+
 </resources>

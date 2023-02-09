@@ -1,0 +1,10 @@
+--------------------Patch 1.0
+Splash screen ve onboarding Yapıldı.
+-> Onboarding içeriği yok, yapılacak.
+Login, Register sayfaları yapıldı.
+Giriş sonrası main page yapıldı.
+Database içerisine kelime ekleme sayfası yapıldı.
+--------------------Patch 1.1
+Bug Fix, Arkaplan ekranda yarım şekilde kalması düzeltildi.
+Oyun ayarları sayfası eklendi.
+Kullanıcı ayarlarını firebase içerisine upload kısmı yapıldı.

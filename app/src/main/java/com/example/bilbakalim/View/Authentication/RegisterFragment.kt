@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
+import com.example.bilbakalim.Model.NEWUSERSETTINGS
 import com.example.bilbakalim.Model.User
 import com.example.bilbakalim.R
 import com.example.bilbakalim.ViewModel.RegisterViewModel
@@ -43,7 +44,7 @@ class RegisterFragment : Fragment() {
             val userPasswordCheck=binding.passwordCheckRegister.text.toString()
             if(userEmail!=""&& userPassword!="" && userPasswordCheck!="")
                 if(userPassword==userPasswordCheck) {
-                    val user=User(userEmail,userPassword)
+                    val user=User(userEmail,userPassword, NEWUSERSETTINGS)
                     viewModel.signUpWithFirebase(user,context)
                 }  else Toast.makeText(context, R.string.passNotMatch,Toast.LENGTH_LONG).show()
 

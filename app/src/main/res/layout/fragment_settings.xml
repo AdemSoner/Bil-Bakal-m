@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".View.Game.SettingsFragment">
+
+    <TextView
+        android:id="@+id/settingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settingsTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="120dp"
+        android:textSize="36sp"/>
+
+    <TextView
+        android:id="@+id/timeSettingsTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/timeSettings"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/timeText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settingsTitle" />
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/timeOne"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/timeSettingsTitleText"
+        app:layout_constraintTop_toTopOf="@id/timeSettingsTitleText"
+        app:layout_constraintBottom_toBottomOf="@id/timeSettingsTitleText"/>
+
+    <Button
+        android:id="@+id/timeOneBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/timeSettingsTitleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/timeTwoBtn"
+        android:text="@string/timeOne"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"/>
+    <Button
+        android:id="@+id/timeTwoBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/timeOneBtn"
+        app:layout_constraintStart_toEndOf="@id/timeOneBtn"
+        app:layout_constraintBottom_toBottomOf="@id/timeOneBtn"
+        app:layout_constraintEnd_toStartOf="@id/timeThreeBtn"
+        android:text="@string/timeTwo"
+        android:layout_marginStart="16dp" />
+
+    <Button
+        android:id="@+id/timeThreeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/timeTwoBtn"
+        app:layout_constraintBottom_toBottomOf="@id/timeTwoBtn"
+        app:layout_constraintStart_toEndOf="@id/timeTwoBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/timeThree"
+        android:layout_marginStart="16dp" />
+
+
+    <!--- llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll -->
+
+
+
+    <TextView
+        android:id="@+id/passSettingsTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/passSettings"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/passText"
+        app:layout_constraintStart_toStartOf="@id/timeSettingsTitleText"
+        app:layout_constraintTop_toBottomOf="@id/timeOneBtn" />
+
+    <TextView
+        android:id="@+id/passText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/passThree"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/passSettingsTitleText"
+        app:layout_constraintTop_toTopOf="@id/passSettingsTitleText"
+        app:layout_constraintBottom_toBottomOf="@id/passSettingsTitleText"/>
+
+    <Button
+        android:id="@+id/passOneBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/passSettingsTitleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/passTwoBtn"
+        android:text="@string/passOne"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"/>
+    <Button
+        android:id="@+id/passTwoBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/passOneBtn"
+        app:layout_constraintStart_toEndOf="@id/passOneBtn"
+        app:layout_constraintBottom_toBottomOf="@id/passOneBtn"
+        app:layout_constraintEnd_toStartOf="@id/passThreeBtn"
+        android:text="@string/passTwo"
+        android:layout_marginStart="16dp" />
+
+    <Button
+        android:id="@+id/passThreeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/passTwoBtn"
+        app:layout_constraintBottom_toBottomOf="@id/passTwoBtn"
+        app:layout_constraintStart_toEndOf="@id/passTwoBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/passThree"
+        android:layout_marginStart="16dp" />
+
+    <!--- llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll -->
+
+
+
+    <TextView
+        android:id="@+id/winPointSettingsTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/winPointSettings"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/winPointText"
+        app:layout_constraintStart_toStartOf="@id/passSettingsTitleText"
+        app:layout_constraintTop_toBottomOf="@id/passOneBtn" />
+
+    <TextView
+        android:id="@+id/winPointText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/winPointTwo"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/winPointSettingsTitleText"
+        app:layout_constraintTop_toTopOf="@id/winPointSettingsTitleText"
+        app:layout_constraintBottom_toBottomOf="@id/winPointSettingsTitleText"/>
+
+    <Button
+        android:id="@+id/winPointOneBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/winPointSettingsTitleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/winPointTwoBtn"
+        android:text="@string/winPointOne"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"/>
+    <Button
+        android:id="@+id/winPointTwoBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/winPointOneBtn"
+        app:layout_constraintStart_toEndOf="@id/winPointOneBtn"
+        app:layout_constraintBottom_toBottomOf="@id/winPointOneBtn"
+        app:layout_constraintEnd_toStartOf="@id/winPointThreeBtn"
+        android:text="@string/winPointTwo"
+        android:layout_marginStart="16dp" />
+
+    <Button
+        android:id="@+id/winPointThreeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/winPointTwoBtn"
+        app:layout_constraintBottom_toBottomOf="@id/winPointTwoBtn"
+        app:layout_constraintStart_toEndOf="@id/winPointTwoBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/winPointThree"
+        android:layout_marginStart="16dp" />
+
+    <Button
+        android:id="@+id/defaultSettingsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/winPointOneBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/goBackBtn"
+        android:textAllCaps="false"
+        android:text="@string/defaultSettings"
+        android:layout_marginTop="32dp"/>
+    <Button
+        android:id="@+id/goBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/defaultSettingsBtn"
+        app:layout_constraintStart_toEndOf="@id/defaultSettingsBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textAllCaps="false"
+        android:text="@string/goBack"/>
+
+    <ProgressBar
+        android:id="@+id/settingsProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

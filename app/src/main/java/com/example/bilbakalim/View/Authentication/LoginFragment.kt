@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
+import com.example.bilbakalim.Model.NEWUSERSETTINGS
 import com.example.bilbakalim.Model.User
 import com.example.bilbakalim.R
 import com.example.bilbakalim.databinding.FragmentLoginBinding
@@ -39,7 +40,7 @@ class LoginFragment : Fragment() {
         binding.signInButton.setOnClickListener {
             val userEmail= binding.emailText.text.toString()
             val userPassword = binding.passwordLogin.text.toString()
-            val user=User(userEmail,userPassword)
+            val user=User(userEmail,userPassword, NEWUSERSETTINGS)
             if(userEmail!="" && userPassword !="") viewModel.signInWithFirebase(user)
             else Toast.makeText(context,R.string.fill,Toast.LENGTH_LONG).show()
 
