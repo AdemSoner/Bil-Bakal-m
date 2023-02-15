@@ -11,3 +11,5 @@ data class Words(val key:String,
                  val bannedWord5:String)
 
 data class UserSettings(val gameTime:String, val pass:String, val winningPoint:String)
+
+data class Teams(val teamNameOne:String, val teamNameTwo:String)

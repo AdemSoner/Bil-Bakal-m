@@ -21,7 +21,10 @@ class SplashFragment : Fragment() {
         Handler().postDelayed({
             if (onBoardingFinished()){
                 val action= SplashFragmentDirections.actionSplashFragmentToLoginFragment()
-                Navigation.findNavController(view).navigate(action)
+                val action2=SplashFragmentDirections.actionSplashFragmentToGamePreparationFragment()
+                Navigation.findNavController(view).navigate(action2)
+
+
             }else{
                 val action= SplashFragmentDirections.actionSplashFragmentToOnBoardingFragment()
                 Navigation.findNavController(view).navigate(action)

@@ -31,6 +31,8 @@ class MainPage : Fragment() {
 
     private fun initializeUI(view: View) {
         binding.newGameBtn.setOnClickListener {
+            val action=MainPageDirections.actionMainPageToGamePreparationFragment()
+            Navigation.findNavController(it).navigate(action)
 
         }
         binding.settingsBtn.setOnClickListener {
@@ -43,7 +45,8 @@ class MainPage : Fragment() {
         }
         binding.quitGameBtn.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-            exitProcess(-1)
+            val action= MainPageDirections.actionMainPageToLoginFragment()
+            Navigation.findNavController(view).navigate(action)
         }
     }
 

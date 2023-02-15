@@ -8,3 +8,10 @@ Database içerisine kelime ekleme sayfası yapıldı.
 Bug Fix, Arkaplan ekranda yarım şekilde kalması düzeltildi.
 Oyun ayarları sayfası eklendi.
 Kullanıcı ayarlarını firebase içerisine upload kısmı yapıldı.
+--------------------Patch 2.0
+Çıkış yap özelliği oturumu kapat ile değiştirildi.
+Yeni oyuna başlangıç hazırlık aşaması eklendi.
+Yeni oyun başlatma eklendi.
+Veritabanından kelimeleri alıp oyunda gösterme eklendi.
+Timer eklendi.
+Doğru, yanlış ve pas sesleri eklendi.

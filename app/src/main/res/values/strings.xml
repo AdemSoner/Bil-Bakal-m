@@ -2,7 +2,7 @@
     <string name="app_name">Bil Bakalım</string>
     <string name="fill"> Lütfen Boş bırakmayınız</string>
     <string name="error">Hata</string>
-    <string name="quit">Çıkış Yap</string>
+    <string name="quit">Oturumu Kapat</string>
 
     <!-- Onboarding strings -->
     <string name="skipOnBoard">Atla</string>
@@ -58,13 +58,30 @@
     <string name="timeThree">90</string>
     <string name="passSettings">Pas Hakkı</string>
     <string name="passOne">1</string>
-    <string name="passThree">3</string>
     <string name="passTwo">2</string>
+    <string name="passThree">3</string>
     <string name="winPointSettings">Kazanma Puanı</string>
-    <string name="winPointTwo">25</string>
     <string name="winPointOne">10</string>
+    <string name="winPointTwo">25</string>
     <string name="winPointThree">40</string>
     <string name="defaultSettings">Varsayılan ayarlar</string>
+
+    <!--- Game Preparation strings -->
+    <string name="menu">Menü</string>
+    <string name="teamOne">A TAKIMI</string>
+    <string name="teamTwo">B TAKIMI</string>
+    <string name="startGame">Oyuna Başla</string>
+
+
+    <!--- Game strings -->
+    <string name="ready">Hazırım</string>
+    <string name="score">Skor:</string>
+    <string name="trueAnswer">DOĞRU</string>
+    <string name="penaltyAnswer">CEZA</string>
+    <string name="pass">PAS</string>
+    <string name="noMoreWordFinish">Hafızada kelime kalmadığından oyun sonlanmıştır. Menüye dönüp tekrardan oyun başlatabilirsiniz.</string>
+    <string name="nextPlayer">Sıradaki oyuncu oynayabilir veya oyunu sonlandırabilirsiniz.</string>
+    <string name="next">Sıradaki</string>
 
 
 </resources>
