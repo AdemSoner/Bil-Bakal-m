@@ -23,7 +23,9 @@ class GameViewModel:ViewModel() {
     val score= MutableLiveData<Int>()
     val finishGame=MutableLiveData<Boolean>()
 
-    lateinit var playingTeam:String
+    var team1Score=0
+    var team2Score=0
+
     val teams=ArrayList<String>()
     val userSettings=ArrayList<String>()
     val words=ArrayList<Words>()
@@ -36,9 +38,8 @@ class GameViewModel:ViewModel() {
 
     fun getGameDetails(){
         loading.value=true
-        val query = firebaseDatabase.child("Users")
+        val query = firebaseDatabase.child("Game")
             .child(firebaseAuth?.uid.toString())
-            .child("userGame")
             .child("Teams")
             .orderByKey()
         query.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -71,9 +72,8 @@ class GameViewModel:ViewModel() {
             }
         })
 
-        val query2 = firebaseDatabase.child("Users")
+        val query2 = firebaseDatabase.child("Game")
             .child(firebaseAuth?.uid.toString())
-            .child("userGame")
             .child("Words")
             .orderByKey()
         query2.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -100,8 +100,7 @@ class GameViewModel:ViewModel() {
 
     fun getNextTeam(): String {
         if(countTeam==2) countTeam=0
-        playingTeam=teams[countTeam++]
-        return playingTeam
+        return teams[countTeam++]
     }
 
     fun startTimer(){
@@ -114,7 +113,10 @@ class GameViewModel:ViewModel() {
     fun setGameSettings(){
         timer.value=userSettings[0].toInt()
         passChance.value=userSettings[1].toInt()
+        readScoreToFirebase(countTeam)
     }
+
+
 
     fun nextWord() : Words{
         if(countWord==0)
@@ -140,25 +142,46 @@ class GameViewModel:ViewModel() {
 
 
     fun writeScoreToFirebase(){
-        if(countTeam==1){
-            firebaseDatabase.child("Users")
+        if(countTeam==1 ){
+            team1Score=score.value!!
+            firebaseDatabase.child("Game")
                 .child(firebaseAuth?.uid.toString())
-                .child("userGame")
-                .child("Teams")
+                .child("Score")
                 .child("teamNameOne")
-                .child("score")
                 .setValue(score.value.toString())
         }
         else{
-            firebaseDatabase.child("Users")
+            team2Score=score.value!!
+            firebaseDatabase.child("Game")
                 .child(firebaseAuth?.uid.toString())
-                .child("userGame")
-                .child("Teams")
+                .child("Score")
                 .child("teamNameTwo")
-                .child("score")
                 .setValue(score.value.toString())
         }
 
+
+    }
+
+    private fun readScoreToFirebase(team: Int) {
+        if(team==1){
+             firebaseDatabase.child("Game")
+                .child(firebaseAuth?.uid.toString())
+                .child("Score")
+                .child("teamNameOne")
+                .get()
+                 .addOnSuccessListener {
+                     score.value=it.value.toString().toInt()
+                 }
+        }else{
+            firebaseDatabase.child("Game")
+                .child(firebaseAuth?.uid.toString())
+                .child("Score")
+                .child("teamNameTwo")
+                .get()
+                .addOnSuccessListener {
+                    score.value=it.value.toString().toInt()
+                }
+        }
 
     }
 

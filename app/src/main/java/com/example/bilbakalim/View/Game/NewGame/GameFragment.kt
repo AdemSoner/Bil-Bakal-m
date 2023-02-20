@@ -48,15 +48,16 @@ class GameFragment : Fragment() {
 
     private fun initiliazeUI() {
         binding.readyBtn.setOnClickListener {
-            setWord(viewModel.nextWord())
             binding.readyScreenConstraint.visibility=View.GONE
             binding.gameFragmentContainer.visibility=View.VISIBLE
+            setWord(viewModel.nextWord())
             startFlag=1
             viewModel.setGameSettings()
         }
         binding.passBtn.setOnClickListener {
             viewModel.passMedia(requireContext())
             viewModel.passChance.value= (viewModel.passChance.value)?.minus(1)
+            setWord(viewModel.nextWord())
         }
         binding.pauseBtn.setOnClickListener {
             pauseTime=viewModel.timer.value!!.minus(1)
@@ -80,11 +81,29 @@ class GameFragment : Fragment() {
                 .show()
         }
         binding.trueBtn.setOnClickListener {
+            viewModel.score.value= (viewModel.score.value)?.plus(1)
             viewModel.correctMedia(requireContext())
             setWord(viewModel.nextWord())
         }
         binding.penaltyBtn.setOnClickListener {
+            viewModel.score.value= (viewModel.score.value)?.minus(1)
             viewModel.incorrectMedia(requireContext())
+            setWord(viewModel.nextWord())
+        }
+
+        binding.goMainMenuBtn.setOnClickListener {
+            val action=GameFragmentDirections.actionGameFragmentToMainPage()
+            Navigation.findNavController(it).navigate(action)
+        }
+        binding.goMenuBtn.setOnClickListener {
+            val action=GameFragmentDirections.actionGameFragmentToMainPage()
+            Navigation.findNavController(it).navigate(action)
+        }
+        binding.nextPlayerBtn.setOnClickListener {
+            viewModel.readyToShow.value=false
+            viewModel.readyToShow.value=true
+            binding.nextPlayerFragmentContainer.visibility=View.GONE
+            binding.readyScreenConstraint.visibility=View.VISIBLE
         }
 
     }
@@ -117,6 +136,8 @@ class GameFragment : Fragment() {
                 else {
                     startFlag=0
                     viewModel.writeScoreToFirebase()
+                    binding.Team1ScoreNextTV.text = "${viewModel.teams[0]}=${viewModel.team1Score}"
+                    binding.Team2ScoreNextTV.text = "${viewModel.teams[1]}=${viewModel.team2Score}"
                     binding.gameFragmentContainer.visibility=View.GONE
                     binding.readyScreenConstraint.visibility=View.GONE
                     binding.endGameFragmentContainer.visibility=View.GONE
@@ -127,23 +148,29 @@ class GameFragment : Fragment() {
         viewModel.passChance.observe(viewLifecycleOwner, Observer { pass->
             pass?.let {
                 binding.passChanceTV.text = it.toString()
-                if(it==0)
-                    binding.passBtn.isEnabled=false
+                binding.passBtn.isEnabled = it != 0
                 }
         })
         viewModel.score.observe(viewLifecycleOwner, Observer { score->
             score?.let {
                 if (it==viewModel.userSettings[2].toInt()){
-                    println("Oyun kzaznnn")
-                    //TODO("Oyunu kazanmış oldu ")
+                    viewModel.finishGame.value=true
+                }else{
+                    binding.scoreTV.text=it.toString()
+                    viewModel.writeScoreToFirebase()
                 }
             }
         })
         viewModel.finishGame.observe(viewLifecycleOwner, Observer {value->
             value?.let {
                 if(it){
-                    binding.gameFragmentContainer.visibility=View.GONE
+                    pauseFlag=1
+                    binding.Team1ScoreTV.text = "${viewModel.teams[0]}=${viewModel.team1Score}"
+                    binding.Team2ScoreTV.text = "${viewModel.teams[1]}=${viewModel.team2Score}"
                     binding.readyScreenConstraint.visibility=View.GONE
+                    binding.nextPlayerFragmentContainer.visibility=View.GONE
+                    binding.gameFragmentContainer.visibility=View.GONE
+                    binding.endGameFragmentContainer.visibility=View.VISIBLE
                 }
             }
 

@@ -73,7 +73,7 @@ class GamePreparationFragment : Fragment() {
         })
         viewModel.message.observe(viewLifecycleOwner, Observer { message->
             message?.let {
-                Toast.makeText(context,message,Toast.LENGTH_LONG).show()
+                Toast.makeText(context,message,Toast.LENGTH_SHORT).show()
             }
         })
     }

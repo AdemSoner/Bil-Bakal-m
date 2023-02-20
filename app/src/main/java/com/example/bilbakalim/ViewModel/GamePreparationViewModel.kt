@@ -23,17 +23,21 @@ class GamePreparationViewModel:ViewModel() {
     fun startGame(teamOneName:String,teamTwoName:String){
         preparationInProgress.value=true
         val teams=Teams(teamOneName,teamTwoName)
-        firebaseDatabase.child("Users")
+        firebaseDatabase.child("Game")
             .child(firebaseAuth?.uid.toString())
-            .child("userGame")
             .child("Teams")
             .setValue(teams)
-            .addOnCompleteListener {
-                if (it.isSuccessful)
-                    message.value="Oyun başlıyor..."
-                else
-                    message.value="Oyun başlatma hatalı"
-            }
+        firebaseDatabase.child("Game")
+            .child(firebaseAuth?.uid.toString())
+            .child("Score")
+            .child("teamNameOne")
+            .setValue("0")
+        firebaseDatabase.child("Game")
+            .child(firebaseAuth?.uid.toString())
+            .child("Score")
+            .child("teamNameTwo")
+            .setValue("0")
+
         val query = FirebaseDatabase.getInstance().reference
             .child("Words")
             .orderByKey()
@@ -55,14 +59,16 @@ class GamePreparationViewModel:ViewModel() {
                             bannedWordFive))
                     }
                 }
-                firebaseDatabase.child("Users")
+                firebaseDatabase.child("Game")
                     .child(firebaseAuth?.uid.toString())
-                    .child("userGame")
                     .child("Words")
                     .setValue(wordList)
                     .addOnCompleteListener {
-                        if(it.isSuccessful)
+                        if(it.isSuccessful){
+                            message.value="Oyun başlıyor..."
                             gameReadyToStart.value=true
+                        }else
+                            message.value="Oyun başlatma hatalı"
                         preparationInProgress.value=false
                     }
             }

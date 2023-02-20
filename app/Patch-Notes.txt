@@ -15,3 +15,7 @@ Yeni oyun başlatma eklendi.
 Veritabanından kelimeleri alıp oyunda gösterme eklendi.
 Timer eklendi.
 Doğru, yanlış ve pas sesleri eklendi.
+--------------------Patch 2.1
+Oyun kısmı tamamen halledildi.
+Oyun içerisinde kelime bittiğinde crash sorunu giderildi.
+Oyun sonu skorları gösterme eklendi.
