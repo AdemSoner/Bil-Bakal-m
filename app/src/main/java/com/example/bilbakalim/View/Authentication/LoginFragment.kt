@@ -1,25 +1,28 @@
 package com.example.bilbakalim.View.Authentication
 
+import android.content.res.Configuration
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import com.example.bilbakalim.Model.NEWUSERSETTINGS
 import com.example.bilbakalim.Model.User
 import com.example.bilbakalim.R
-import com.example.bilbakalim.databinding.FragmentLoginBinding
 import com.example.bilbakalim.ViewModel.LoginViewModel
+import com.example.bilbakalim.databinding.FragmentLoginBinding
 
 
 class LoginFragment : Fragment() {
     private var _binding : FragmentLoginBinding? = null
     private val binding get() = _binding!!
     lateinit var viewModel: LoginViewModel
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -85,5 +88,7 @@ class LoginFragment : Fragment() {
         if(!value) binding.loginProgressBar.visibility=View.GONE
         else binding.loginProgressBar.visibility=View.VISIBLE
     }
+
+
 
 }

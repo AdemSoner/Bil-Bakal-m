@@ -21,7 +21,7 @@
                     android:id="@+id/settingsTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="120dp"
+                    android:layout_marginTop="36dp"
                     android:text="@string/settingsTitle"
                     android:textSize="36sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +33,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="36dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="36dp"
                     android:text="@string/timeSettings"
                     android:textSize="24sp"
                     app:layout_constraintEnd_toStartOf="@id/timeText"
@@ -53,18 +53,18 @@
 
                 <Button
                     android:id="@+id/timeOneBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
                     android:text="@string/timeOne"
                     app:layout_constraintEnd_toStartOf="@id/timeTwoBtn"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/timeSettingsTitleText" />
+                    app:layout_constraintStart_toEndOf="@id/timeText"
+                    app:layout_constraintTop_toTopOf="@id/timeText"
+                    app:layout_constraintBottom_toBottomOf="@id/timeText"/>
 
                 <Button
                     android:id="@+id/timeTwoBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="@string/timeTwo"
@@ -75,9 +75,10 @@
 
                 <Button
                     android:id="@+id/timeThreeBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     android:text="@string/timeThree"
                     app:layout_constraintBottom_toBottomOf="@id/timeTwoBtn"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -112,18 +113,18 @@
 
                 <Button
                     android:id="@+id/passOneBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
                     android:text="@string/passOne"
-                    app:layout_constraintEnd_toStartOf="@id/passTwoBtn"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/passSettingsTitleText" />
+                    app:layout_constraintTop_toTopOf="@id/passText"
+                    app:layout_constraintStart_toEndOf="@id/passText"
+                    app:layout_constraintBottom_toBottomOf="@id/passText"
+                    app:layout_constraintEnd_toStartOf="@id/passTwoBtn"/>
 
                 <Button
                     android:id="@+id/passTwoBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="@string/passTwo"
@@ -134,9 +135,10 @@
 
                 <Button
                     android:id="@+id/passThreeBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     android:text="@string/passThree"
                     app:layout_constraintBottom_toBottomOf="@id/passTwoBtn"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -170,18 +172,18 @@
 
                 <Button
                     android:id="@+id/winPointOneBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
                     android:text="@string/winPointOne"
+                    app:layout_constraintTop_toTopOf="@id/winPointText"
+                    app:layout_constraintStart_toEndOf="@id/winPointText"
                     app:layout_constraintEnd_toStartOf="@id/winPointTwoBtn"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/winPointSettingsTitleText" />
+                    app:layout_constraintBottom_toBottomOf="@id/winPointText"/>
 
                 <Button
                     android:id="@+id/winPointTwoBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="@string/winPointTwo"
@@ -192,9 +194,10 @@
 
                 <Button
                     android:id="@+id/winPointThreeBtn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     android:text="@string/winPointThree"
                     app:layout_constraintBottom_toBottomOf="@id/winPointTwoBtn"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -205,7 +208,7 @@
                     android:id="@+id/defaultSettingsBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="24dp"
                     android:text="@string/defaultSettings"
                     android:textAllCaps="false"
                     app:layout_constraintEnd_toStartOf="@id/goBackBtn"

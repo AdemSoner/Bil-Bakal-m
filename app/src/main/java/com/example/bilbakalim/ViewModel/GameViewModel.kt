@@ -4,6 +4,7 @@ package com.example.bilbakalim.ViewModel
 import android.content.Context
 import android.media.MediaPlayer
 import android.os.Handler
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.bilbakalim.Model.Words
@@ -29,8 +30,10 @@ class GameViewModel:ViewModel() {
     val teams=ArrayList<String>()
     val userSettings=ArrayList<String>()
     val words=ArrayList<Words>()
+    private val temporaryWords=ArrayList<Words>()
     private var countTeam=0
     private var countWord=0
+    private var temporaryWordCount=0
 
     private val firebaseDatabase=FirebaseDatabase.getInstance().reference
     private val firebaseAuth=FirebaseAuth.getInstance().currentUser
@@ -89,6 +92,7 @@ class GameViewModel:ViewModel() {
                             singleSnapshot.child("bannedWord5").value.toString()))
                     }
                 }
+                setTemproraryWords(countWord,words)
                 readyToShow.value=true
                 loading.value=false
             }
@@ -98,9 +102,27 @@ class GameViewModel:ViewModel() {
         })
     }
 
+
     fun getNextTeam(): String {
         if(countTeam==2) countTeam=0
         return teams[countTeam++]
+    }
+
+    fun nextWord() : Words{
+        return if(countWord==1){
+            val sendWord=words[0]
+            words.remove(sendWord)
+            countWord=temporaryWordCount
+            for (nowWord in temporaryWords){
+                words.add(nowWord)
+            }
+            sendWord
+        } else{
+            val randomWord=(Math.random()*countWord--).toInt()
+            val sendWord=words[randomWord]
+            words.remove(words[randomWord])
+            sendWord
+        }
     }
 
     fun startTimer(){
@@ -117,19 +139,6 @@ class GameViewModel:ViewModel() {
     }
 
 
-
-    fun nextWord() : Words{
-        if(countWord==0)
-            finishGame.value=true
-        else{
-            val randomWord=(Math.random()*countWord--).toInt()
-            val sendWord=words[randomWord]
-            words.remove(words[randomWord])
-            return sendWord
-        }
-        return Words("","","","","","")
-    }
-
     fun correctMedia(context: Context){
         MediaPlayer.create(context,R.raw.correct).start()
     }
@@ -138,6 +147,9 @@ class GameViewModel:ViewModel() {
     }
     fun passMedia(context: Context){
         MediaPlayer.create(context,R.raw.pass).start()
+    }
+    fun finishMedia(context: Context){
+        MediaPlayer.create(context,R.raw.finish).start()
     }
 
 
@@ -183,6 +195,13 @@ class GameViewModel:ViewModel() {
                 }
         }
 
+    }
+
+    private fun setTemproraryWords(count: Int, word: java.util.ArrayList<Words>) {
+        temporaryWordCount=count
+        for (nowWord in word){
+            temporaryWords.add(nowWord)
+        }
     }
 
 }

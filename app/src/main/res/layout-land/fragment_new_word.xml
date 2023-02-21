@@ -33,7 +33,7 @@
                     android:id="@+id/newWorldTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_marginTop="72dp"
+                    android:layout_marginTop="18dp"
                     android:gravity="center"
                     android:text="@string/newWordPageTitle"
                     android:textSize="36sp"
@@ -45,60 +45,62 @@
                     android:id="@+id/mainWord"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     android:hint="@string/mainWord"
+                    app:layout_constraintStart_toEndOf="@id/goBack"
                     app:layout_constraintEnd_toEndOf="@id/newWorldTitle"
-                    app:layout_constraintStart_toStartOf="@id/newWorldTitle"
                     app:layout_constraintTop_toBottomOf="@id/newWorldTitle" />
 
                 <EditText
                     android:id="@+id/banWord1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="8dp"
                     android:hint="@string/penaltyOne"
-                    app:layout_constraintEnd_toEndOf="@id/newWorldTitle"
-                    app:layout_constraintStart_toStartOf="@id/newWorldTitle"
+                    app:layout_constraintStart_toStartOf="@id/mainWord"
+                    app:layout_constraintEnd_toEndOf="@id/mainWord"
                     app:layout_constraintTop_toBottomOf="@id/mainWord" />
 
                 <EditText
                     android:id="@+id/banWord2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="8dp"
                     android:hint="@string/penaltyTwo"
-                    app:layout_constraintEnd_toEndOf="@id/newWorldTitle"
-                    app:layout_constraintStart_toStartOf="@id/newWorldTitle"
+                    app:layout_constraintStart_toStartOf="@id/banWord1"
+                    app:layout_constraintEnd_toEndOf="@id/banWord1"
                     app:layout_constraintTop_toBottomOf="@id/banWord1" />
 
                 <EditText
                     android:id="@+id/banWord3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="8dp"
                     android:hint="@string/penaltyThree"
-                    app:layout_constraintEnd_toEndOf="@id/newWorldTitle"
-                    app:layout_constraintStart_toStartOf="@id/newWorldTitle"
+                    app:layout_constraintStart_toStartOf="@id/banWord2"
+                    app:layout_constraintEnd_toEndOf="@id/banWord2"
                     app:layout_constraintTop_toBottomOf="@id/banWord2" />
 
                 <EditText
                     android:id="@+id/banWord4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="8dp"
                     android:hint="@string/penaltyFour"
-                    app:layout_constraintEnd_toEndOf="@id/newWorldTitle"
-                    app:layout_constraintStart_toStartOf="@id/newWorldTitle"
+                    app:layout_constraintStart_toStartOf="@id/banWord3"
+                    app:layout_constraintEnd_toEndOf="@id/banWord3"
                     app:layout_constraintTop_toBottomOf="@id/banWord3" />
 
                 <EditText
                     android:id="@+id/banWord5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="8dp"
                     android:hint="@string/penaltyFive"
-                    app:layout_constraintEnd_toEndOf="@id/newWorldTitle"
-                    app:layout_constraintStart_toStartOf="@id/newWorldTitle"
+                    app:layout_constraintStart_toStartOf="@id/banWord4"
+                    app:layout_constraintEnd_toEndOf="@id/banWord4"
                     app:layout_constraintTop_toBottomOf="@id/banWord4" />
 
                 <Button
@@ -107,10 +109,10 @@
                     android:layout_height="48dp"
                     android:layout_marginTop="32dp"
                     android:text="@string/clear"
-                    app:layout_constraintEnd_toStartOf="@+id/addWordBtn"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/banWord5" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/mainWord"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/addWordBtn"/>
 
 
                 <Button
@@ -118,10 +120,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:text="@string/addWord"
+                    app:layout_constraintTop_toBottomOf="@id/clearText"
+                    app:layout_constraintStart_toEndOf="@id/mainWord"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/clearText"
-                    app:layout_constraintTop_toTopOf="@id/clearText" />
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
                 <ProgressBar
                     android:id="@+id/wordProgressBar"

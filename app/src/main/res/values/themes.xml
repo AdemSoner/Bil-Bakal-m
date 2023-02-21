@@ -1,6 +1,4 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-
-
     <!-- Base application theme. -->
     <style name="Theme.BilBakalım" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -15,7 +13,6 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="android:colorForeground">@color/cyan_process_blue</item>
         <item name="android:textColorHint">@color/cyan_process_blue</item>
-
 
         <item name="colorAccent">#0091BC</item>
 

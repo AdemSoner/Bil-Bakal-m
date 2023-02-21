@@ -19,3 +19,7 @@ Doğru, yanlış ve pas sesleri eklendi.
 Oyun kısmı tamamen halledildi.
 Oyun içerisinde kelime bittiğinde crash sorunu giderildi.
 Oyun sonu skorları gösterme eklendi.
+--------------------Patch 2.2
+Bazı görüntü düzenlemeleri yapıldı.
+Dark mod teması düzenlendi.
+Landscape mod eklendi.

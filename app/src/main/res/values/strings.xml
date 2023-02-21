@@ -79,8 +79,8 @@
     <string name="trueAnswer">DOĞRU</string>
     <string name="penaltyAnswer">CEZA</string>
     <string name="pass">PAS</string>
-    <string name="noMoreWordFinish">Hafızada kelime kalmadığından oyun sonlanmıştır. Menüye dönüp tekrardan oyun başlatabilirsiniz.</string>
     <string name="nextPlayer">Süreniz Bitti. Sıradaki oyuncu oynayabilir veya oyunu sonlandırabilirsiniz.</string>
+    <string name="winnerGame">tebrikler, oyunu kazandınız.</string>
     <string name="next">Sıradaki</string>
 
 

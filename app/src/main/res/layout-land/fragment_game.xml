@@ -30,10 +30,9 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/readyScreenConstraint"
-
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="visible"
+                    android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -46,10 +45,10 @@
                         android:gravity="center"
                         android:padding="18dp"
                         android:textSize="36sp"
-                        app:layout_constraintBottom_toTopOf="@id/readyBtn"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/readyBtn"/>
 
                     <Button
                         android:id="@+id/readyBtn"
@@ -78,17 +77,17 @@
                         android:id="@+id/timerText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="56dp"
-                        android:textSize="32sp"
+                        android:layout_margin="56dp"
+                        android:textSize="48sp"
+                        android:text="40"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
 
                     <Button
                         android:id="@+id/pauseBtn"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
                         android:layout_margin="16dp"
                         android:background="@drawable/ic_pause_circle"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -109,12 +108,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
-                        android:layout_marginEnd="48dp"
                         android:text="@string/score"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/timerText" />
+                        app:layout_constraintTop_toBottomOf="@id/gameTeamNameTV"
+                        app:layout_constraintStart_toStartOf="@id/gameTeamNameTV"/>
 
                     <TextView
                         android:id="@+id/scoreTV"
@@ -133,10 +131,11 @@
                         android:layout_marginTop="8dp"
                         android:textColor="@color/madder_lake_red"
                         android:textSize="48sp"
+                        android:text="ADEM"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/gameTeamNameTV" />
+                        app:layout_constraintTop_toBottomOf="@id/pauseBtn"
+                        app:layout_constraintStart_toEndOf="@id/timerText"
+                        app:layout_constraintEnd_toStartOf="@id/pauseBtn"/>
 
                     <TextView
                         android:id="@+id/banWord1TV"
@@ -146,8 +145,8 @@
                         android:textColor="@color/black"
                         android:textSize="32sp"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/timerText"
+                        app:layout_constraintEnd_toStartOf="@id/pauseBtn"
                         app:layout_constraintTop_toBottomOf="@id/keyTV" />
 
                     <TextView
@@ -158,8 +157,8 @@
                         android:textColor="@color/black"
                         android:textSize="32sp"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/timerText"
+                        app:layout_constraintEnd_toStartOf="@id/pauseBtn"
                         app:layout_constraintTop_toBottomOf="@id/banWord1TV" />
 
                     <TextView
@@ -170,8 +169,8 @@
                         android:textColor="@color/black"
                         android:textSize="32sp"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/timerText"
+                        app:layout_constraintEnd_toStartOf="@id/pauseBtn"
                         app:layout_constraintTop_toBottomOf="@id/banWord2TV" />
 
                     <TextView
@@ -182,8 +181,8 @@
                         android:textColor="@color/black"
                         android:textSize="32sp"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/timerText"
+                        app:layout_constraintEnd_toStartOf="@id/pauseBtn"
                         app:layout_constraintTop_toBottomOf="@id/banWord3TV" />
 
                     <TextView
@@ -194,8 +193,8 @@
                         android:textColor="@color/black"
                         android:textSize="32sp"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/timerText"
+                        app:layout_constraintEnd_toStartOf="@id/pauseBtn"
                         app:layout_constraintTop_toBottomOf="@id/banWord4TV" />
 
 
@@ -204,37 +203,40 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/trueAnswer"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/penaltyBtn"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/scoreTV"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/banWord5TV" />
+                        app:layout_constraintBottom_toTopOf="@id/penaltyBtn"/>
 
                     <Button
                         android:id="@+id/penaltyBtn"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/penaltyAnswer"
-                        app:layout_constraintEnd_toStartOf="@id/passBtn"
-                        app:layout_constraintStart_toEndOf="@id/trueBtn"
-                        app:layout_constraintTop_toTopOf="@id/trueBtn" />
+                        app:layout_constraintTop_toBottomOf="@id/trueBtn"
+                        app:layout_constraintStart_toStartOf="@id/trueBtn"
+                        app:layout_constraintEnd_toEndOf="@id/trueBtn"
+                        app:layout_constraintBottom_toTopOf="@id/passBtn"/>
+
+                    <Button
+                        android:id="@+id/passBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pass"
+                        app:layout_constraintEnd_toEndOf="@id/trueBtn"
+                        app:layout_constraintStart_toStartOf="@id/trueBtn"
+                        app:layout_constraintTop_toBottomOf="@id/penaltyBtn"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
 
                     <TextView
                         android:id="@+id/passChanceTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="16dp"
                         app:layout_constraintBottom_toBottomOf="@id/passBtn"
-                        app:layout_constraintEnd_toStartOf="@id/passBtn"
+                        app:layout_constraintStart_toEndOf="@id/passBtn"
                         app:layout_constraintTop_toTopOf="@id/passBtn" />
-
-                    <Button
-                        android:id="@+id/passBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/pass"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/penaltyBtn"
-                        app:layout_constraintTop_toTopOf="@id/penaltyBtn" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -324,7 +326,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="84dp"
                         android:gravity="center"
-
                         android:padding="24dp"
                         android:text="@string/winnerGame"
                         android:textSize="24sp"
@@ -368,7 +369,6 @@
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>

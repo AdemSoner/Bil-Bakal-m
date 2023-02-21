@@ -3,6 +3,8 @@ package com.example.bilbakalim.View.Game.NewGame
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.UnderlineSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -30,7 +32,6 @@ class GameFragment : Fragment() {
         viewModel=ViewModelProviders.of(this)[GameViewModel::class.java]
         viewModel.getGameDetails()
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -82,7 +83,9 @@ class GameFragment : Fragment() {
         }
         binding.trueBtn.setOnClickListener {
             viewModel.score.value= (viewModel.score.value)?.plus(1)
-            viewModel.correctMedia(requireContext())
+            val gameFinishScore=viewModel.userSettings[2].toInt()
+            if(viewModel.team1Score != gameFinishScore && viewModel.team2Score != gameFinishScore)
+                viewModel.correctMedia(requireContext())
             setWord(viewModel.nextWord())
         }
         binding.penaltyBtn.setOnClickListener {
@@ -110,6 +113,7 @@ class GameFragment : Fragment() {
 
 
     private fun observeLiveData() {
+
         viewModel.loading.observe(viewLifecycleOwner, Observer { loading->
             loading?.let {
                 enableDisableComponents(it)
@@ -153,20 +157,26 @@ class GameFragment : Fragment() {
         })
         viewModel.score.observe(viewLifecycleOwner, Observer { score->
             score?.let {
-                if (it==viewModel.userSettings[2].toInt()){
+                viewModel.writeScoreToFirebase()
+                if (it==viewModel.userSettings[2].toInt())
                     viewModel.finishGame.value=true
-                }else{
+                else
                     binding.scoreTV.text=it.toString()
-                    viewModel.writeScoreToFirebase()
-                }
+
+
             }
         })
         viewModel.finishGame.observe(viewLifecycleOwner, Observer {value->
             value?.let {
                 if(it){
+                    viewModel.finishMedia(requireContext())
                     pauseFlag=1
+                    if(viewModel.team1Score == viewModel.userSettings[2].toInt())
+                        binding.noWordMessageTV.text="${viewModel.teams[0]} "+getString(R.string.winnerGame)
+                    else
+                        binding.noWordMessageTV.text="${viewModel.teams[1]} "+getString(R.string.winnerGame)
                     binding.Team1ScoreTV.text = "${viewModel.teams[0]}=${viewModel.team1Score}"
-                    binding.Team2ScoreTV.text = "${viewModel.teams[1]}=${viewModel.team2Score}"
+                    binding.Team2ScoreTV.text = "${viewModel.teams[1]}=${(viewModel.team2Score)}"
                     binding.readyScreenConstraint.visibility=View.GONE
                     binding.nextPlayerFragmentContainer.visibility=View.GONE
                     binding.gameFragmentContainer.visibility=View.GONE
@@ -188,7 +198,9 @@ class GameFragment : Fragment() {
         else binding.gameProgressBar.visibility=View.GONE
     }
     private fun setWord(word: Words) {
-        binding.keyTV.text=word.key
+        var spanString= SpannableString(word.key)
+        spanString.setSpan(UnderlineSpan(),0,spanString.length, 0)
+        binding.keyTV.text=spanString
         binding.banWord1TV.text=word.bannedWord1
         binding.banWord2TV.text=word.bannedWord2
         binding.banWord3TV.text=word.bannedWord3
