@@ -3,14 +3,13 @@ package com.example.bilbakalim.View.WelcomePage
 import android.content.Context
 import android.os.Bundle
 import android.os.Handler
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
-import com.example.bilbakalim.R
 import com.example.bilbakalim.ViewModel.SplashViewModel
 import com.example.bilbakalim.databinding.FragmentSplashBinding
 
@@ -20,8 +19,7 @@ class SplashFragment : Fragment() {
     private lateinit var viewModel: SplashViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSplashBinding.inflate(inflater, container, false)
         viewModel = ViewModelProviders.of(this)[SplashViewModel::class.java]
@@ -39,6 +37,7 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observeLiveData()
+        viewModel.refreshWordsFromAPI()
     }
 
     private fun onBoardingFinished(): Boolean {

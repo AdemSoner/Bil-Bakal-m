@@ -26,3 +26,7 @@ Landscape mod eklendi.
 --------------------Patch 2.3
 Remember Me özelliği getirildi.
 Ekran döndürmesinde oyun bozulma sorunu düzeltildi.
+--------------------Patch 3.0
+Tanıtım ekranı yapıldı.
+Uygulama açılışında json üzerinden kelime çekme getirildi.
+Oyun ekranında kelimeler card image içerisine eklendi.

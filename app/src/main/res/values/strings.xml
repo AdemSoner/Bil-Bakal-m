@@ -5,9 +5,21 @@
     <string name="quit">Oturumu Kapat</string>
 
     <!-- Onboarding strings -->
-    <string name="skipOnBoard">Atla</string>
+    <string name="skipOnBoard">Tanıtımı Geç</string>
     <string name="nextOnBoard">Devam et</string>
     <string name="finishOnBoard">Başlayalım</string>
+
+    <string name="welcomeApp">Bil Bakalım uygulamasına hoş geldiniz…</string>
+    <string name="gamePlayer">Bil Bakalım, minimum 4 maksimum ise bulabildiğiniz kişi sayısı kadar, oyunu oynarken eğlencenin doruk noktalarında olduğu bir oyundur.</string>
+    <string name="readyToGame">Eğlenmek mi istiyorsun, ne duruyorsun? Hadi beraber öğrenip eğlenelim.</string>
+
+    <string name="teamAbout">Bil bakalım, 2 takım arasında oynanan bir oyundur.</string>
+    <string name="teamAboutContinue">Sırası gelen takımın oyuncusu havuzdan rastgele bir kelime almaktadır.</string>
+
+    <string name="bannedWordAbout">Oyunu oynayan oyuncu, altı çizili kelimeyi altında bulunan siyah renkli 5 kelimeyi kullanmadan anlatmaya çalışmalı.</string>
+    <string name="teamMates">Takım arkadaşları ise anlatanı dinleyip anlattığı kelime hakkında tahminde bulunabilirler. Takım arkadaşları anlatılan kelimeyi bulmak için sınırsız tahminde bulunabilirler.</string>
+    <string name="inTime"> Süre sayacı 0 olmadan takım arkadaşlarının maksimum kelime bilmesini sağlamak zorundasınız.</string>
+    <string name="letsPlay">Ne duruyorsun, hadi eğlencenin dibini boylayalım…</string>
 
     <!-- LoginFragment strings -->
     <string name="loginpagewelcomemessage">Bil Bakalım Giriş Ekranı</string>

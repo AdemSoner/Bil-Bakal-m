@@ -9,15 +9,15 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
-import com.example.bilbakalim.Model.NEWUSERSETTINGS
 import com.example.bilbakalim.Model.User
 import com.example.bilbakalim.R
+import com.example.bilbakalim.Service.NEWUSERSETTINGS
 import com.example.bilbakalim.ViewModel.LoginViewModel
 import com.example.bilbakalim.databinding.FragmentLoginBinding
 
 
 class LoginFragment : Fragment() {
-    private var _binding : FragmentLoginBinding? = null
+    private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
     lateinit var viewModel: LoginViewModel
 
@@ -25,8 +25,8 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding= FragmentLoginBinding.inflate(inflater,container, false)
-        viewModel= ViewModelProviders.of(this)[LoginViewModel::class.java]
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        viewModel = ViewModelProviders.of(this)[LoginViewModel::class.java]
         return binding.root
     }
 
@@ -38,38 +38,38 @@ class LoginFragment : Fragment() {
 
     private fun initializeUI() {
         binding.signInButton.setOnClickListener {
-            val userEmail= binding.emailText.text.toString()
+            val userEmail = binding.emailText.text.toString()
             val userPassword = binding.passwordLogin.text.toString()
             val rememberUser = binding.rememberMeCheckBox.isChecked
-            val user=User(userEmail,userPassword, NEWUSERSETTINGS,rememberUser)
-            if(userEmail!="" && userPassword !="") viewModel.signInWithFirebase(user)
-            else Toast.makeText(context,R.string.fill,Toast.LENGTH_LONG).show()
+            val user = User(userEmail, userPassword, NEWUSERSETTINGS, rememberUser)
+            if (userEmail != "" && userPassword != "") viewModel.signInWithFirebase(user)
+            else Toast.makeText(context, R.string.fill, Toast.LENGTH_LONG).show()
 
         }
         binding.signUpTextView.setOnClickListener {
-            val action= LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+            val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
             Navigation.findNavController(it).navigate(action)
         }
         binding.forgotPasswordTextView.setOnClickListener {
-            ForgotPassword().show(childFragmentManager,"forgotPasswordFragment")
+            ForgotPassword().show(childFragmentManager, "forgotPasswordFragment")
         }
     }
 
-    private fun observeLiveData(view:View) {
-        viewModel.loginInProgress.observe(viewLifecycleOwner, Observer {loading ->
+    private fun observeLiveData(view: View) {
+        viewModel.loginInProgress.observe(viewLifecycleOwner, Observer { loading ->
             loading?.let {
                 enableDisableComponents(it)
             }
         })
         viewModel.loginErrorMessage.observe(viewLifecycleOwner, Observer { error ->
             error?.let {
-                Toast.makeText(context,error,Toast.LENGTH_LONG).show()
+                Toast.makeText(context, error, Toast.LENGTH_LONG).show()
             }
         })
-        viewModel.loginIsSuccess.observe(viewLifecycleOwner, Observer { isSuccess->
+        viewModel.loginIsSuccess.observe(viewLifecycleOwner, Observer { isSuccess ->
             isSuccess?.let {
-                if(it){
-                    val action= LoginFragmentDirections.actionLoginFragmentToMainPage()
+                if (it) {
+                    val action = LoginFragmentDirections.actionLoginFragmentToMainPage()
                     Navigation.findNavController(view).navigate(action)
                 }
             }
@@ -77,16 +77,15 @@ class LoginFragment : Fragment() {
 
     }
 
-    private fun enableDisableComponents(value:Boolean) {
-        binding.emailText.isEnabled=!value
-        binding.passwordLogin.isEnabled=!value
-        binding.forgotPasswordTextView.isEnabled=!value
-        binding.signInButton.isEnabled=!value
-        binding.signUpTextView.isEnabled=!value
-        if(!value) binding.loginProgressBar.visibility=View.GONE
-        else binding.loginProgressBar.visibility=View.VISIBLE
+    private fun enableDisableComponents(value: Boolean) {
+        binding.emailText.isEnabled = !value
+        binding.passwordLogin.isEnabled = !value
+        binding.forgotPasswordTextView.isEnabled = !value
+        binding.signInButton.isEnabled = !value
+        binding.signUpTextView.isEnabled = !value
+        if (!value) binding.loginProgressBar.visibility = View.GONE
+        else binding.loginProgressBar.visibility = View.VISIBLE
     }
-
 
 
 }

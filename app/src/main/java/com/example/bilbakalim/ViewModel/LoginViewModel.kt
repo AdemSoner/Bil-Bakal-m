@@ -15,26 +15,23 @@ class LoginViewModel : ViewModel() {
     fun signInWithFirebase(userInfo: User) {
         loginInProgress.value = true
         firebaseAuth.signInWithEmailAndPassword(
-            userInfo.userEmail,
-            userInfo.userPassword)
-            .addOnCompleteListener {
-                if (it.isSuccessful) {
-                    setRememberMeChecked(userInfo.rememberMe)
-                    loginIsSuccess.value = true
-                } else {
-                    loginIsSuccess.value = false
-                    loginErrorMessage.value = it.exception?.message.toString()
-                }
-                loginInProgress.value = false
+            userInfo.userEmail, userInfo.userPassword
+        ).addOnCompleteListener {
+            if (it.isSuccessful) {
+                setRememberMeChecked(userInfo.rememberMe)
+                loginIsSuccess.value = true
+            } else {
+                loginIsSuccess.value = false
+                loginErrorMessage.value = it.exception?.message.toString()
             }
+            loginInProgress.value = false
+        }
 
     }
 
     private fun setRememberMeChecked(rememberMe: Boolean) {
-        FirebaseDatabase.getInstance().reference
-            .child("Users")
-            .child(firebaseAuth.currentUser?.uid.toString())
-            .child("rememberMe")
+        FirebaseDatabase.getInstance().reference.child("Users")
+            .child(firebaseAuth.currentUser?.uid.toString()).child("rememberMe")
             .setValue(rememberMe)
     }
 }

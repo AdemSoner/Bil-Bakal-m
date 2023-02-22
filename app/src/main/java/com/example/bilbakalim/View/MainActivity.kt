@@ -1,7 +1,7 @@
 package com.example.bilbakalim.View
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.bilbakalim.R
 
 class MainActivity : AppCompatActivity() {

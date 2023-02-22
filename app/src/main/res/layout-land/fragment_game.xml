@@ -9,13 +9,7 @@
         android:background="@drawable/background"
         tools:context=".View.Game.NewGame.GameFragment">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <ProgressBar
                     android:id="@+id/gameProgressBar"
@@ -32,7 +26,7 @@
                     android:id="@+id/readyScreenConstraint"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="invisible"
+                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +73,6 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="56dp"
                         android:textSize="48sp"
-                        android:text="40"
                         android:textStyle="bold"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"/>
@@ -124,77 +117,111 @@
                         app:layout_constraintStart_toEndOf="@id/scoreNameTV"
                         app:layout_constraintTop_toTopOf="@id/scoreNameTV" />
 
+                    <ImageView
+                        android:id="@+id/cardImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:src="@drawable/onecard"
+                        app:layout_constraintTop_toBottomOf="@id/pauseBtn"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/trueBtn"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
                     <TextView
                         android:id="@+id/keyTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
-                        android:textColor="@color/madder_lake_red"
-                        android:textSize="48sp"
-                        android:text="ADEM"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:textColor="@color/cyan_process_blue"
+                        android:textSize="36sp"
                         android:textStyle="bold"
-                        app:layout_constraintTop_toBottomOf="@id/pauseBtn"
-                        app:layout_constraintStart_toEndOf="@id/timerText"
-                        app:layout_constraintEnd_toStartOf="@id/pauseBtn"/>
+                        app:layout_constraintBottom_toTopOf="@id/banWord1TV"
+                        app:layout_constraintEnd_toEndOf="@id/cardImage"
+                        app:layout_constraintStart_toStartOf="@id/cardImage"
+                        app:layout_constraintTop_toTopOf="@id/cardImage"/>
 
                     <TextView
                         android:id="@+id/banWord1TV"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
                         android:textColor="@color/black"
-                        android:textSize="32sp"
+                        android:textSize="24sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@id/timerText"
-                        app:layout_constraintEnd_toStartOf="@id/pauseBtn"
+                        app:layout_constraintBottom_toTopOf="@id/banWord2TV"
+                        app:layout_constraintEnd_toEndOf="@id/cardImage"
+                        app:layout_constraintStart_toStartOf="@id/cardImage"
                         app:layout_constraintTop_toBottomOf="@id/keyTV" />
 
                     <TextView
                         android:id="@+id/banWord2TV"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
                         android:textColor="@color/black"
-                        android:textSize="32sp"
+                        android:gravity="center"
+                        android:textSize="24sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@id/timerText"
-                        app:layout_constraintEnd_toStartOf="@id/pauseBtn"
+                        app:layout_constraintBottom_toTopOf="@id/banWord3TV"
+                        app:layout_constraintEnd_toEndOf="@id/cardImage"
+                        app:layout_constraintStart_toStartOf="@id/cardImage"
                         app:layout_constraintTop_toBottomOf="@id/banWord1TV" />
 
                     <TextView
                         android:id="@+id/banWord3TV"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
                         android:textColor="@color/black"
-                        android:textSize="32sp"
+                        android:textSize="24sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@id/timerText"
-                        app:layout_constraintEnd_toStartOf="@id/pauseBtn"
+                        app:layout_constraintBottom_toTopOf="@id/banWord4TV"
+                        app:layout_constraintEnd_toEndOf="@id/cardImage"
+                        app:layout_constraintStart_toStartOf="@id/cardImage"
                         app:layout_constraintTop_toBottomOf="@id/banWord2TV" />
 
                     <TextView
                         android:id="@+id/banWord4TV"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
                         android:textColor="@color/black"
-                        android:textSize="32sp"
+                        android:textSize="24sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@id/timerText"
-                        app:layout_constraintEnd_toStartOf="@id/pauseBtn"
+                        app:layout_constraintBottom_toTopOf="@id/banWord5TV"
+                        app:layout_constraintEnd_toEndOf="@id/cardImage"
+                        app:layout_constraintStart_toStartOf="@id/cardImage"
                         app:layout_constraintTop_toBottomOf="@id/banWord3TV" />
 
                     <TextView
                         android:id="@+id/banWord5TV"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:layout_marginBottom="16dp"
                         android:textColor="@color/black"
-                        android:textSize="32sp"
+                        android:textSize="24sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@id/timerText"
-                        app:layout_constraintEnd_toStartOf="@id/pauseBtn"
+                        app:layout_constraintBottom_toBottomOf="@id/cardImage"
+                        app:layout_constraintEnd_toEndOf="@id/cardImage"
+                        app:layout_constraintStart_toStartOf="@id/cardImage"
                         app:layout_constraintTop_toBottomOf="@id/banWord4TV" />
 
 
@@ -371,6 +398,5 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

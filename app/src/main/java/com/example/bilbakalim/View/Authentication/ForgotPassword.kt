@@ -11,14 +11,14 @@ import com.example.bilbakalim.databinding.FragmentForgotPasswordBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class ForgotPassword : DialogFragment() {
-    private var _binding: FragmentForgotPasswordBinding?=null
-    private val binding get()=_binding!!
+    private var _binding: FragmentForgotPasswordBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding=FragmentForgotPasswordBinding.inflate(inflater,container,false)
+        _binding = FragmentForgotPasswordBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -28,11 +28,10 @@ class ForgotPassword : DialogFragment() {
             dismiss()
         }
         binding.sendLink.setOnClickListener {
-            if(binding.emailForgot.text.toString()!=""){
+            if (binding.emailForgot.text.toString() != "") {
                 sifreSifirlaBaglantisiYolla()
-            }
-            else{
-                Toast.makeText(activity,R.string.infoForgotPassword,Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(activity, R.string.infoForgotPassword, Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -40,12 +39,15 @@ class ForgotPassword : DialogFragment() {
     private fun sifreSifirlaBaglantisiYolla() {
         FirebaseAuth.getInstance().sendPasswordResetEmail(binding.emailForgot.text.toString())
             .addOnCompleteListener { task ->
-                if(task.isSuccessful){
-                    Toast.makeText(activity,R.string.checkInbox,Toast.LENGTH_SHORT).show()
+                if (task.isSuccessful) {
+                    Toast.makeText(activity, R.string.checkInbox, Toast.LENGTH_SHORT).show()
                     dismiss()
-                }
-                else{
-                    Toast.makeText(activity,"${R.string.error}= ${task.exception?.message}",Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(
+                        activity,
+                        "${R.string.error}= ${task.exception?.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
     }
