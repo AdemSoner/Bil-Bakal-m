@@ -74,6 +74,28 @@
                     app:layout_constraintTop_toBottomOf="@+id/emailText" />
 
                 <TextView
+                    android:id="@+id/forgotPasswordTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/forgotPassword"
+                    app:drawableLeftCompat="@drawable/ic_lock"
+                    app:layout_constraintEnd_toEndOf="@+id/signUpTextView"
+                    app:layout_constraintStart_toStartOf="@+id/signUpTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/passwordLogin" />
+
+                <CheckBox
+                    android:id="@+id/rememberMeCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/rememberMe"
+                    android:textColor="@color/green"
+                    app:layout_constraintBottom_toTopOf="@+id/sign_inButton"
+                    app:layout_constraintEnd_toEndOf="@+id/sign_inButton"
+                    app:layout_constraintTop_toTopOf="@+id/forgotPasswordTextView" />
+
+                <TextView
                     android:id="@+id/signUpTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -107,16 +129,8 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/forgotPasswordTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/forgotPassword"
-                    app:drawableLeftCompat="@drawable/ic_lock"
-                    app:layout_constraintEnd_toEndOf="@+id/signUpTextView"
-                    app:layout_constraintStart_toStartOf="@+id/signUpTextView"
-                    app:layout_constraintTop_toBottomOf="@+id/passwordLogin" />
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>

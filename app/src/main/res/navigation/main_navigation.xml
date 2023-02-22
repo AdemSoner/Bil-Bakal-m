@@ -50,8 +50,8 @@
             android:id="@+id/action_splashFragment_to_onBoardingFragment"
             app:destination="@id/onBoardingFragment" />
         <action
-            android:id="@+id/action_splashFragment_to_gamePreparationFragment"
-            app:destination="@id/gamePreparationFragment" />
+            android:id="@+id/action_splashFragment_to_mainPage"
+            app:destination="@id/mainPage" />
     </fragment>
     <fragment
         android:id="@+id/onBoardingFragment"

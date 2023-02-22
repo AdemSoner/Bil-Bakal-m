@@ -94,6 +94,18 @@
                     app:layout_constraintStart_toStartOf="@id/forgotPasswordTextView"
                     app:layout_constraintTop_toBottomOf="@id/forgotPasswordTextView" />
 
+                <CheckBox
+                    android:id="@+id/rememberMeCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/rememberMe"
+                    android:textColor="@color/green"
+                    app:layout_constraintBottom_toBottomOf="@id/sign_inButton"
+                    app:layout_constraintEnd_toStartOf="@id/sign_inButton"
+                    app:layout_constraintTop_toTopOf="@id/sign_inButton"
+                    app:layout_constraintStart_toEndOf="@id/signUpTextView"/>
+
                 <Button
                     android:id="@+id/sign_inButton"
                     android:layout_width="wrap_content"
@@ -102,7 +114,7 @@
                     android:text="@string/signIn"
                     android:textAllCaps="false"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/signUpTextView"
+                    app:layout_constraintStart_toEndOf="@id/rememberMeCheckBox"
                     app:layout_constraintTop_toBottomOf="@+id/forgotPasswordTextView" />
 
 

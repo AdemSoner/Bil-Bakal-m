@@ -19,7 +19,7 @@ import com.example.bilbakalim.databinding.FragmentRegisterBinding
 class RegisterFragment : Fragment() {
     private var _binding: FragmentRegisterBinding? = null
     private val binding get()= _binding!!
-    lateinit var viewModel:RegisterViewModel
+    private lateinit var viewModel:RegisterViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,7 +44,7 @@ class RegisterFragment : Fragment() {
             val userPasswordCheck=binding.passwordCheckRegister.text.toString()
             if(userEmail!=""&& userPassword!="" && userPasswordCheck!="")
                 if(userPassword==userPasswordCheck) {
-                    val user=User(userEmail,userPassword, NEWUSERSETTINGS)
+                    val user=User(userEmail,userPassword, NEWUSERSETTINGS,false)
                     viewModel.signUpWithFirebase(user,context)
                 }  else Toast.makeText(context, R.string.passNotMatch,Toast.LENGTH_LONG).show()
 

@@ -82,6 +82,7 @@
     <string name="nextPlayer">Süreniz Bitti. Sıradaki oyuncu oynayabilir veya oyunu sonlandırabilirsiniz.</string>
     <string name="winnerGame">tebrikler, oyunu kazandınız.</string>
     <string name="next">Sıradaki</string>
+    <string name="rememberMe">Beni Hatırla</string>
 
 
 </resources>

@@ -23,3 +23,6 @@ Oyun sonu skorları gösterme eklendi.
 Bazı görüntü düzenlemeleri yapıldı.
 Dark mod teması düzenlendi.
 Landscape mod eklendi.
+--------------------Patch 2.3
+Remember Me özelliği getirildi.
+Ekran döndürmesinde oyun bozulma sorunu düzeltildi.

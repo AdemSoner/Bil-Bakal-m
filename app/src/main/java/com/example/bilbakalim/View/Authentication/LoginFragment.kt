@@ -1,6 +1,5 @@
 package com.example.bilbakalim.View.Authentication
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,8 +21,6 @@ class LoginFragment : Fragment() {
     private val binding get() = _binding!!
     lateinit var viewModel: LoginViewModel
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,7 +40,8 @@ class LoginFragment : Fragment() {
         binding.signInButton.setOnClickListener {
             val userEmail= binding.emailText.text.toString()
             val userPassword = binding.passwordLogin.text.toString()
-            val user=User(userEmail,userPassword, NEWUSERSETTINGS)
+            val rememberUser = binding.rememberMeCheckBox.isChecked
+            val user=User(userEmail,userPassword, NEWUSERSETTINGS,rememberUser)
             if(userEmail!="" && userPassword !="") viewModel.signInWithFirebase(user)
             else Toast.makeText(context,R.string.fill,Toast.LENGTH_LONG).show()
 

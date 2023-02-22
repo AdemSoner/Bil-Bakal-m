@@ -1,7 +1,7 @@
 package com.example.bilbakalim.Model
 
 
-data class User(val userEmail:String,val userPassword:String,val userSettings:UserSettings)
+data class User(val userEmail:String,val userPassword:String,val userSettings:UserSettings, val rememberMe:Boolean)
 
 data class Words(val key:String,
                  val bannedWord1:String,
